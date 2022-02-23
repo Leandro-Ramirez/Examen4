@@ -13,9 +13,8 @@ namespace Forms.Clases
         #region Variables
         int CodigoCliente;
         string NombreCliente;
-        string apellidoCliente;
         #endregion
-
+        
         #region Get & Set
         public int CodigoClientes
         {

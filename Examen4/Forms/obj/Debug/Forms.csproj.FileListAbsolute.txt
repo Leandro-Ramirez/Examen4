@@ -1,0 +1,10 @@
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.frmInformacion.resources
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.Properties.Resources.resources
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+C:\Users\JADPA02\source\repos\Examen4\Forms\bin\Debug\Forms.exe.config
+C:\Users\JADPA02\source\repos\Examen4\Forms\bin\Debug\Forms.exe
+C:\Users\JADPA02\source\repos\Examen4\Forms\bin\Debug\Forms.pdb
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.exe
+C:\Users\JADPA02\source\repos\Examen4\Forms\obj\Debug\Forms.pdb

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pbCargaC = new System.Windows.Forms.ProgressBar();
+            this.btnCancelarC = new System.Windows.Forms.Button();
             this.btnMostrarC = new System.Windows.Forms.Button();
             this.btnGuardarC = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
@@ -39,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbCargaV = new System.Windows.Forms.ProgressBar();
+            this.CancelarV = new System.Windows.Forms.Button();
             this.btnMostrarV = new System.Windows.Forms.Button();
             this.btnGuardarV = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -55,6 +59,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pbCargaP = new System.Windows.Forms.ProgressBar();
+            this.btnCancelarP = new System.Windows.Forms.Button();
             this.btnMostrarP = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnGuardarP = new System.Windows.Forms.Button();
@@ -67,16 +73,10 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbConsulta1 = new System.Windows.Forms.RadioButton();
             this.txtConsulta = new System.Windows.Forms.TextBox();
-            this.btnCancelarP = new System.Windows.Forms.Button();
-            this.CancelarV = new System.Windows.Forms.Button();
-            this.btnCancelarC = new System.Windows.Forms.Button();
-            this.pbCargaC = new System.Windows.Forms.ProgressBar();
             this.ContadorC = new System.Windows.Forms.Timer(this.components);
-            this.pbCargaV = new System.Windows.Forms.ProgressBar();
             this.ContadorV = new System.Windows.Forms.Timer(this.components);
-            this.pbCargaP = new System.Windows.Forms.ProgressBar();
             this.ContadorP = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,6 +120,24 @@
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pbCargaC
+            // 
+            this.pbCargaC.Location = new System.Drawing.Point(324, 60);
+            this.pbCargaC.Name = "pbCargaC";
+            this.pbCargaC.Size = new System.Drawing.Size(200, 30);
+            this.pbCargaC.TabIndex = 28;
+            this.pbCargaC.Visible = false;
+            // 
+            // btnCancelarC
+            // 
+            this.btnCancelarC.Location = new System.Drawing.Point(112, 60);
+            this.btnCancelarC.Name = "btnCancelarC";
+            this.btnCancelarC.Size = new System.Drawing.Size(100, 30);
+            this.btnCancelarC.TabIndex = 27;
+            this.btnCancelarC.Text = "Cancelar";
+            this.btnCancelarC.UseVisualStyleBackColor = true;
+            this.btnCancelarC.Click += new System.EventHandler(this.BtnCancelarC_Click);
+            // 
             // btnMostrarC
             // 
             this.btnMostrarC.Location = new System.Drawing.Point(218, 60);
@@ -128,7 +146,6 @@
             this.btnMostrarC.TabIndex = 23;
             this.btnMostrarC.Text = "Mostrar";
             this.btnMostrarC.UseVisualStyleBackColor = true;
-            this.btnMostrarC.Visible = false;
             this.btnMostrarC.Click += new System.EventHandler(this.BtnMostrarC_Click);
             // 
             // btnGuardarC
@@ -210,6 +227,24 @@
             this.tabPage2.Text = "Ventas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pbCargaV
+            // 
+            this.pbCargaV.Location = new System.Drawing.Point(336, 161);
+            this.pbCargaV.Name = "pbCargaV";
+            this.pbCargaV.Size = new System.Drawing.Size(200, 30);
+            this.pbCargaV.TabIndex = 29;
+            this.pbCargaV.Visible = false;
+            // 
+            // CancelarV
+            // 
+            this.CancelarV.Location = new System.Drawing.Point(330, 42);
+            this.CancelarV.Name = "CancelarV";
+            this.CancelarV.Size = new System.Drawing.Size(100, 30);
+            this.CancelarV.TabIndex = 27;
+            this.CancelarV.Text = "Cancelar";
+            this.CancelarV.UseVisualStyleBackColor = true;
+            this.CancelarV.Click += new System.EventHandler(this.CancelarV_Click);
+            // 
             // btnMostrarV
             // 
             this.btnMostrarV.Location = new System.Drawing.Point(436, 6);
@@ -218,7 +253,6 @@
             this.btnMostrarV.TabIndex = 25;
             this.btnMostrarV.Text = "Mostrar";
             this.btnMostrarV.UseVisualStyleBackColor = true;
-            this.btnMostrarV.Visible = false;
             this.btnMostrarV.Click += new System.EventHandler(this.BtnMostrarV_Click);
             // 
             // btnGuardarV
@@ -365,6 +399,24 @@
             this.tabPage3.Text = "Productos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pbCargaP
+            // 
+            this.pbCargaP.Location = new System.Drawing.Point(333, 82);
+            this.pbCargaP.Name = "pbCargaP";
+            this.pbCargaP.Size = new System.Drawing.Size(200, 30);
+            this.pbCargaP.TabIndex = 30;
+            this.pbCargaP.Visible = false;
+            // 
+            // btnCancelarP
+            // 
+            this.btnCancelarP.Location = new System.Drawing.Point(333, 45);
+            this.btnCancelarP.Name = "btnCancelarP";
+            this.btnCancelarP.Size = new System.Drawing.Size(100, 30);
+            this.btnCancelarP.TabIndex = 26;
+            this.btnCancelarP.Text = "Cancelar";
+            this.btnCancelarP.UseVisualStyleBackColor = true;
+            this.btnCancelarP.Click += new System.EventHandler(this.BtnCancelarP_Click);
+            // 
             // btnMostrarP
             // 
             this.btnMostrarP.Location = new System.Drawing.Point(439, 8);
@@ -373,7 +425,6 @@
             this.btnMostrarP.TabIndex = 25;
             this.btnMostrarP.Text = "Mostrar";
             this.btnMostrarP.UseVisualStyleBackColor = true;
-            this.btnMostrarP.Visible = false;
             this.btnMostrarP.Click += new System.EventHandler(this.BtnMostrarP_Click);
             // 
             // dgvProductos
@@ -413,7 +464,7 @@
             // txtCodigoProductoP
             // 
             this.txtCodigoProductoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoProductoP.Location = new System.Drawing.Point(169, 38);
+            this.txtCodigoProductoP.Location = new System.Drawing.Point(169, 8);
             this.txtCodigoProductoP.Name = "txtCodigoProductoP";
             this.txtCodigoProductoP.Size = new System.Drawing.Size(100, 22);
             this.txtCodigoProductoP.TabIndex = 6;
@@ -421,7 +472,7 @@
             // txtNombreProducto
             // 
             this.txtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProducto.Location = new System.Drawing.Point(169, 12);
+            this.txtNombreProducto.Location = new System.Drawing.Point(169, 36);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(100, 22);
             this.txtNombreProducto.TabIndex = 5;
@@ -447,7 +498,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(11, 41);
+            this.label15.Location = new System.Drawing.Point(11, 11);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(152, 16);
             this.label15.TabIndex = 1;
@@ -456,7 +507,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(34, 15);
+            this.label13.Location = new System.Drawing.Point(34, 39);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(129, 16);
             this.label13.TabIndex = 0;
@@ -464,7 +515,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.radioButton1);
+            this.tabPage4.Controls.Add(this.rbConsulta1);
             this.tabPage4.Controls.Add(this.txtConsulta);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
@@ -474,16 +525,17 @@
             this.tabPage4.Text = "Consultas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbConsulta1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(44, 44);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(113, 20);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbConsulta1.AutoSize = true;
+            this.rbConsulta1.Location = new System.Drawing.Point(6, 6);
+            this.rbConsulta1.Name = "rbConsulta1";
+            this.rbConsulta1.Size = new System.Drawing.Size(193, 20);
+            this.rbConsulta1.TabIndex = 1;
+            this.rbConsulta1.TabStop = true;
+            this.rbConsulta1.Text = "Productos En Existencia";
+            this.rbConsulta1.UseVisualStyleBackColor = true;
+            this.rbConsulta1.CheckedChanged += new System.EventHandler(this.RbConsulta1_CheckedChanged);
             // 
             // txtConsulta
             // 
@@ -495,67 +547,13 @@
             this.txtConsulta.Size = new System.Drawing.Size(530, 234);
             this.txtConsulta.TabIndex = 0;
             // 
-            // btnCancelarP
-            // 
-            this.btnCancelarP.Location = new System.Drawing.Point(333, 45);
-            this.btnCancelarP.Name = "btnCancelarP";
-            this.btnCancelarP.Size = new System.Drawing.Size(100, 30);
-            this.btnCancelarP.TabIndex = 26;
-            this.btnCancelarP.Text = "Cancelar";
-            this.btnCancelarP.UseVisualStyleBackColor = true;
-            this.btnCancelarP.Click += new System.EventHandler(this.BtnCancelarP_Click);
-            // 
-            // CancelarV
-            // 
-            this.CancelarV.Location = new System.Drawing.Point(330, 42);
-            this.CancelarV.Name = "CancelarV";
-            this.CancelarV.Size = new System.Drawing.Size(100, 30);
-            this.CancelarV.TabIndex = 27;
-            this.CancelarV.Text = "Cancelar";
-            this.CancelarV.UseVisualStyleBackColor = true;
-            this.CancelarV.Click += new System.EventHandler(this.CancelarV_Click);
-            // 
-            // btnCancelarC
-            // 
-            this.btnCancelarC.Location = new System.Drawing.Point(112, 60);
-            this.btnCancelarC.Name = "btnCancelarC";
-            this.btnCancelarC.Size = new System.Drawing.Size(100, 30);
-            this.btnCancelarC.TabIndex = 27;
-            this.btnCancelarC.Text = "Cancelar";
-            this.btnCancelarC.UseVisualStyleBackColor = true;
-            this.btnCancelarC.Click += new System.EventHandler(this.BtnCancelarC_Click);
-            // 
-            // pbCargaC
-            // 
-            this.pbCargaC.Location = new System.Drawing.Point(324, 60);
-            this.pbCargaC.Name = "pbCargaC";
-            this.pbCargaC.Size = new System.Drawing.Size(200, 30);
-            this.pbCargaC.TabIndex = 28;
-            this.pbCargaC.Visible = false;
-            // 
             // ContadorC
             // 
             this.ContadorC.Tick += new System.EventHandler(this.ContadorC_Tick);
             // 
-            // pbCargaV
-            // 
-            this.pbCargaV.Location = new System.Drawing.Point(336, 161);
-            this.pbCargaV.Name = "pbCargaV";
-            this.pbCargaV.Size = new System.Drawing.Size(200, 30);
-            this.pbCargaV.TabIndex = 29;
-            this.pbCargaV.Visible = false;
-            // 
             // ContadorV
             // 
             this.ContadorV.Tick += new System.EventHandler(this.ContadorV_Tick);
-            // 
-            // pbCargaP
-            // 
-            this.pbCargaP.Location = new System.Drawing.Point(333, 82);
-            this.pbCargaP.Name = "pbCargaP";
-            this.pbCargaP.Size = new System.Drawing.Size(200, 30);
-            this.pbCargaP.TabIndex = 30;
-            this.pbCargaP.Visible = false;
             // 
             // ContadorP
             // 
@@ -614,7 +612,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbConsulta1;
         private System.Windows.Forms.TextBox txtConsulta;
         private System.Windows.Forms.TextBox txtCodigoDelProductoV;
         private System.Windows.Forms.TextBox txtCodigoClienteV;

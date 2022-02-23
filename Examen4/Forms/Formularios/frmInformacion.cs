@@ -38,9 +38,9 @@ namespace Forms
         #region Boton Guardar Cliente
         private void BtnGuardarC_Click(object sender, EventArgs e)
         {
+            btnMostrarC.Enabled = false;
             this.ContadorC.Start();
             GuardarCliente();
-            
         }
         #endregion
         #region Boton Mostrar Cliente
@@ -52,7 +52,7 @@ namespace Forms
         #region Boton Cancelar Cliente
         private void BtnCancelarC_Click(object sender, EventArgs e)
         {
-            CancelarCliente()
+            CancelarCliente();
         }
         #endregion
 
@@ -61,6 +61,7 @@ namespace Forms
         #region Boton Guardar Venta
         private void BtnGuardarV_Click(object sender, EventArgs e)
         {
+            btnMostrarV.Enabled = false;
             this.ContadorV.Start();
             GuardarVenta();
         }
@@ -83,6 +84,7 @@ namespace Forms
         #region Boton Guardar Producto
         private void BtnGuardarP_Click(object sender, EventArgs e)
         {
+            btnMostrarP.Enabled = false;
             this.ContadorP.Start();
             GuardarProducto();
         }
@@ -96,10 +98,17 @@ namespace Forms
         #region Boton Cancelar Producto
         private void BtnCancelarP_Click(object sender, EventArgs e)
         {
-            CancelarProducto()
+            CancelarProducto();
         }
         #endregion
+
+        #region Radio Boton Consulta 1
+        private void RbConsulta1_CheckedChanged(object sender, EventArgs e)
+        {
+            ProductoExistencia();
+        }
         #endregion
+       #endregion
 
         #region Metodos
         #region Guardar Cliente
@@ -108,6 +117,19 @@ namespace Forms
             cliente = new Cliente(int.Parse(txtCodigoCliente.Text), txtNombreCliente.Text);
 
             listaClientes.Add(cliente);
+        }
+        #endregion
+        #region Contador Cliente
+        private void ContadorC_Tick(object sender, EventArgs e)
+        {
+            this.pbCargaC.Visible = true;
+            this.pbCargaC.Increment(5);
+            if (pbCargaC.Value >= pbCargaC.Maximum)
+            {
+                ContadorC.Stop();
+                btnMostrarC.Enabled = true;
+                pbCargaC.Visible = false;
+            }
         }
         #endregion
         #region Mostrar Cliente
@@ -135,6 +157,19 @@ namespace Forms
             listaVentas.Add(venta);
         }
         #endregion
+        #region Contador Venta
+        private void ContadorV_Tick(object sender, EventArgs e)
+        {
+            this.pbCargaV.Visible = true;
+            this.pbCargaV.Increment(5);
+            if (pbCargaV.Value >= pbCargaV.Maximum)
+            {
+                ContadorV.Stop();
+                btnMostrarV.Enabled = true;
+                pbCargaV.Visible = false;
+            }
+        }
+        #endregion
         #region Mostrar Venta
         public void MostrarVenta()
         {
@@ -157,10 +192,23 @@ namespace Forms
         #region Guardar Producto
         public void GuardarProducto()
         {
-            producto = new Producto(int.Parse(txtSubTotal.Text), txtNombreProducto.Text,
+            producto = new Producto(int.Parse(txtCodigoProductoP.Text), txtNombreProducto.Text, 
                 double.Parse(txtPrecioUnidad.Text), int.Parse(txtUnidadExistencia.Text));
 
             listaProductos.Add(producto);
+        }
+        #endregion
+        #region Contador Producto
+        private void ContadorP_Tick(object sender, EventArgs e)
+        {
+            this.pbCargaP.Visible = true;
+            this.pbCargaP.Increment(5);
+            if (pbCargaP.Value >= pbCargaP.Maximum)
+            {
+                ContadorP.Stop();
+                btnMostrarP.Enabled = true;
+                pbCargaP.Visible = false;
+            }
         }
         #endregion
         #region Mostrar Producto
@@ -198,51 +246,6 @@ namespace Forms
         #region Consulta 3
 
         #endregion
-        #endregion
-
-        #region Herramientas
-        #region Contador Cliente
-        private void ContadorC_Tick(object sender, EventArgs e)
-        {
-            this.pbCargaC.Visible = true;
-            this.pbCargaC.Increment(2);
-            if (pbCargaC.Value >= pbCargaC.Maximum)
-            {
-                ContadorC.Stop();
-                this.Hide();
-                btnMostrarC.Visible = true;
-            }
-        }
-        #endregion
-
-        #region Contador Venta
-        private void ContadorV_Tick(object sender, EventArgs e)
-        {
-            this.pbCargaV.Visible = true;
-            this.pbCargaV.Increment(2);
-            if (pbCargaV.Value >= pbCargaV.Maximum)
-            {
-                ContadorV.Stop();
-                this.Hide();
-                btnMostrarV.Visible = true;
-            }
-        }
-        #endregion
-
-        #region Contador Producto
-        private void ContadorP_Tick(object sender, EventArgs e)
-        {
-            this.pbCargaP.Visible = true;
-            this.pbCargaP.Increment(2);
-            if (pbCargaP.Value >= pbCargaP.Maximum)
-            {
-                ContadorP.Stop();
-                this.Hide();
-                btnMostrarP.Visible = true;
-            }
-        }
-        #endregion
-
         #endregion
     }
 }
